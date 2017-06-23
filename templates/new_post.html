@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block head %}
+       <style>
+            form {
+                background-color: #eee;
+                padding: 20px;
+                margin: 0 auto;
+                width: 540px;
+                font: 16px sans-serif;
+                border-radius: 10px;
+            }
+            textarea {
+                margin: 10px 0;
+                width: 480px;
+                height: 120px;
+            }      
+            .error{
+                color:red
+            }
+        </style>
+{% endblock %} 
+{% block content %}
+        <h1 align=center>Add a New Post</h1>
+        <form method='post'>
+            <label>
+                Blog Title:
+                <input type="text" name='blog_title' value='{{blog_title}}' />
+                <span class="error">{{blog_title_error}}</span>
+            </label>
+            <textarea name="blog_body" value='{{blog_body}}'></textarea>
+            <input type="submit" value='Create Post' />
+            <span class="error">{{blog_body_error}}</span>
+        </form>
+
+       
+
+
+{% endblock %}
