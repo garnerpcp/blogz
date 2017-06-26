@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block head %}
+    <style>
+        .error{
+            color:red
+
+        }
+    </style>
+
+{% endblock %} 
+{% block content %}
+<h1>Log in to Get It Done!</h1>
+<p>If you don't have an account, you may <a href="/sign_up">register</a> for one</p>
+<form action="/login" method="post">
+    <table>
+        <tr>
+            <td><label for="email">Email</label></td>
+            <td>
+                <input name="email" type="email" value="{{ email }}"/>
+                <span class="error">{{email_error}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="password">Password</label></td>
+            <td>
+                <input name="password" type="password"  value='{{ password }}'/>
+                <span class="error">{{password_error}}</span>
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Login">
+</form>
+{% endblock %}

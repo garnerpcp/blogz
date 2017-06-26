@@ -6,14 +6,14 @@
 
         
 
-        {% if blogs|length == 0 %}
-        <p>No entries yet</p>
+        {% if users|length == 0 %}
+        <p>No Users yet</p>
         {% else %}
 
             <ul>
-                {% for blog in blogs %}
-                <h2><a href="/blog?blog_id={{blog.id}}">{{blog.name}}</a></h2>
-                    {{blog.body}}
+                {% for user in users %}
+                <h2><a href="/blog?user_id={{user.id}}">{{user.email}}</a></h2>
+                    
                 </li>
                 <hr />
                 {% endfor %}
@@ -23,4 +23,4 @@
 
        
 
-{% endblock %}    
+{% endblock %}   
